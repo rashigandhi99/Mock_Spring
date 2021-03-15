@@ -55,7 +55,12 @@ public class CustomerRestController {
 			return itemList;
 		}
 
-	
+	  @PutMapping(value = "/add")
+	 public CustomerDetails addCustomer(@RequestBody CreateCustomerRequest createCustomerRequest) {
+		 Customer customer= service.createCustomer(createCustomerRequest.getName());
+		 return util.toDetails(customer);
+	 }
+	 
 
 }
 
