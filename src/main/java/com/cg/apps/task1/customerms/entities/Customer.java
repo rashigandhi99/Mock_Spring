@@ -1,9 +1,17 @@
 package com.cg.apps.task1.customerms.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+
+
+import java.util.Set;
+
+import com.cg.apps.task1.items.entities.*;
+
 
 @Entity
 public class Customer{
@@ -18,12 +26,18 @@ public class Customer{
 	public Customer(){
 		
 	}	
+	@OneToMany(fetch = FetchType.EAGER)
+	Set<Item> boughtItems;
 	
-	public Customer(String name, Account account){
+	
+	public Customer(String name, Account account,Set<Item> boughtItems){
 		this.name = name;
 		this.account = account;
+		this.boughtItems=boughtItems;
 	}
 
+
+	
 
 	public long getId() {
 		return id;
@@ -53,6 +67,16 @@ public class Customer{
 	public void setAccount(Account account) {
 		this.account = account;
 	}
+	
+	public Set<Item> getBoughtItems() {
+		return boughtItems;
+	}
+
+
+	public void setBoughtItems(Set<Item> boughtItems) {
+		this.boughtItems = boughtItems;
+	}
+
 	
 	@Override
 	public String toString() {

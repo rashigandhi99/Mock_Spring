@@ -4,26 +4,31 @@ import java.time.LocalDateTime;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 
+import javax.persistence.ManyToOne;
+
+import com.cg.apps.task1.customerms.entities.*;
 
 @Entity
 public class Item {
 	@Id
 	String id;
-	
+
 	Double price;
-	
+
 	String description;
-	
+
 	LocalDateTime addedDate;
+
+	@ManyToOne
+	Customer boughtBy;
 	
-	
-	
+	public Item() {}
 
 	public Item(Double price, String description) {
-		
+
 		this.price = price;
 		this.description = description;
-		
+
 	}
 
 	public String getId() {
@@ -57,8 +62,16 @@ public class Item {
 	public void setAddedDate(LocalDateTime addedDate) {
 		this.addedDate = addedDate;
 	}
-
 	
+
+	public Customer getBoughtBy() {
+		return boughtBy;
+	}
+
+	public void setBoughtBy(Customer boughtBy) {
+		this.boughtBy = boughtBy;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -75,6 +88,5 @@ public class Item {
 			return false;
 		return true;
 	}
-	
 
 }

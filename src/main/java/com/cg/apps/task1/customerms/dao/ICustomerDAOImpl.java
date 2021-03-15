@@ -1,7 +1,9 @@
 package com.cg.apps.task1.customerms.dao;
 
-import com.cg.apps.task1.customerms.entities.*;
+import java.time.LocalDateTime;
 
+import com.cg.apps.task1.customerms.entities.*;
+import com.cg.apps.task1.customerms.exceptions.*;
 
 import javax.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
@@ -18,12 +20,19 @@ public class ICustomerDAOImpl implements ICustomerDAO{
 	@Transactional
 	@Override
 	public Customer add(Customer customer) {
+		LocalDateTime now = LocalDateTime.now();
+		Account account = customer.getAccount();
+		account.setCreated(now);
+		em.persist(account);
 		em.persist(customer);
 		return customer;
 	}
 	@Override
 	public Customer findById(long customerId) {
 		Customer customer=em.find(Customer.class,customerId);
+		if (customer == null) {
+			throw new CustomerNotFoundException("Customer does not exist for ID: " + customerId);
+		}
 		return customer;
 	}
 	

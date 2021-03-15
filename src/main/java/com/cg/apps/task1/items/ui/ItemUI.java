@@ -1,32 +1,43 @@
 package com.cg.apps.task1.items.ui;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.cg.apps.task1.items.entities.*;
 import com.cg.apps.task1.items.service.*;
+import com.cg.apps.task1.customerms.entities.Account;
+import com.cg.apps.task1.customerms.entities.Customer;
+import com.cg.apps.task1.customerms.service.*;
 
 @Component
 public class ItemUI {
-	
+
 	@Autowired
-	IItemService service;
+	private IItemService service;
+	@Autowired
+	private ICustomerService custService;
+	
 	
 	public void start() {
 		
-		Item item1= service.create(100.0,"apple" );
-		display(item1);
-		
-		Item item2= service.create(200.0,"orange" );
-		display(item2);
-		
-		
-	
 		
 	}
 	
-	void display(Item item) {
-		System.out.println("Item id is "+item.getId()+"\n Price if item is  "+item.getPrice()+"\n Name of item is  "+item.getDescription());
-		
+
+	void display(Customer customer) {
+		Account account = customer.getAccount();
+		System.out.println("Customer Id " + customer.getId() + "\nCustomer Name " + customer.getName()
+				+ " \n Customer Account Id  " + account.getAccountID() + "\n Account Balance " + account.getBalance()
+				+ " \n Time Of Creation" + account.getCreated());
+
 	}
-	
+
+	void displayItemDetails(Item item) {
+
+		System.out.println("Item id of customer is " + item.getId() + "\n Item description is " + item.getDescription()
+				+ "\n Price of item bought by customer is " + item.getPrice() + "\nItem bought on "
+				+ item.getAddedDate());
+
+	}
 }
