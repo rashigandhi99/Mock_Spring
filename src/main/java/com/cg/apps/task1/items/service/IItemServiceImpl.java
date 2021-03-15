@@ -37,6 +37,10 @@ public class IItemServiceImpl implements IItemService {
 
 		
 		Item item = new Item( price, description);
+		String itemId = generateItemId();
+		LocalDateTime now = LocalDateTime.now();
+		item.setId(itemId);
+		item.setAddedDate(now);
 		itemDao.add(item);
 		return item;
 	}
