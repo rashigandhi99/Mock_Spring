@@ -25,7 +25,7 @@ public class Account {
 		this.created = created;
 	}
 
-	public Long getAccountID() {
+	public long getAccountID() {
 		return accountId;
 	}
 

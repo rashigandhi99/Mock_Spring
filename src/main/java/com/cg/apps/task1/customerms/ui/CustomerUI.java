@@ -2,7 +2,6 @@ package com.cg.apps.task1.customerms.ui;
 
 import java.util.Set;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.cg.apps.task1.customerms.entities.*;
@@ -34,7 +33,7 @@ public class CustomerUI {
 			
 			System.out.println("                                                                       ");
 			System.out.println("Printing the items bought by " + jhalak.getName());
-			Customer cust2Fetched = customerService.findById(cust1Id);
+			Customer cust2Fetched = customerService.findById(cust2Id);
 			display(cust2Fetched);
 			
 			
