@@ -2,7 +2,6 @@ package com.cg.apps.task1.customerms.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.cg.apps.task1.customerms.entities.*;
 import com.cg.apps.task1.customerms.service.*;
 

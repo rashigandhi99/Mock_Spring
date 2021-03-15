@@ -1,12 +1,13 @@
 package com.cg.apps.task1.items.entities;
 
 import java.time.LocalDateTime;
+import javax.persistence.Id;
 import javax.persistence.Entity;
 
 
 @Entity
 public class Item {
-	
+	@Id
 	String id;
 	
 	Double price;
@@ -18,10 +19,19 @@ public class Item {
 	
 	
 
-	public Item(Double price, String description, LocalDateTime addedDate) {
+	public Item(Double price, String description) {
+		
 		this.price = price;
 		this.description = description;
-		this.addedDate = addedDate;
+		
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public Double getPrice() {

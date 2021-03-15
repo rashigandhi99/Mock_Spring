@@ -1,6 +1,7 @@
 package com.cg.apps.task1;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,6 +15,8 @@ public class Task1Application {
 		
 		CustomerUI customerUI = context.getBean(CustomerUI.class);
 		customerUI.start();
+		
+		
 	}
 
 }
