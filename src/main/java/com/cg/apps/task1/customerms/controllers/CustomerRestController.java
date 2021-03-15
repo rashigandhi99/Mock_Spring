@@ -46,13 +46,7 @@ public class CustomerRestController {
 	        return util.toDetails(customer);
 	    }
 	 
-	/* @PutMapping(value = "/add")
-	 public CustomerDetails addCustomer(@RequestBody CreateCustomerRequest createCustomerRequest) {
-		 String Name=CreateCustomerRequest.getName();
-		 Customer customer= service.createCustomer(Name);
-		 return util.toDetails(customer);
-	 }
-	 */
+	
 	 
 	 @GetMapping(value = "/getItems/{id}")
 		public List<ItemBoughtByCustomer> getItemDetailsById(@PathVariable("id") Long customerId){
