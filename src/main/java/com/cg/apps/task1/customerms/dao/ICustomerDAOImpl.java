@@ -1,4 +1,4 @@
-package com.cg.apps.task1.customerms.dao;
+/*package com.cg.apps.task1.customerms.dao;
 
 import java.time.LocalDateTime;
 
@@ -43,4 +43,4 @@ public class ICustomerDAOImpl implements ICustomerDAO{
 		return customer;
 	}
 	
-}
+}*/

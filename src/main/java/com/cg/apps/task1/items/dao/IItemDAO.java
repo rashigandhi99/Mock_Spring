@@ -1,4 +1,4 @@
-package com.cg.apps.task1.items.dao;
+/*package com.cg.apps.task1.items.dao;
 
 import com.cg.apps.task1.items.entities.*;
 
@@ -10,4 +10,4 @@ public interface IItemDAO {
 
 	Item findById(String itemId);
 
-}
+}*/

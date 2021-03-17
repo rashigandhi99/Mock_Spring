@@ -1,4 +1,4 @@
-package com.cg.apps.task1.customerms.dao;
+/*package com.cg.apps.task1.customerms.dao;
 
 import com.cg.apps.task1.customerms.entities.*;
 public interface ICustomerDAO {
@@ -12,4 +12,4 @@ public interface ICustomerDAO {
 	
 	
 
-}
+}*/

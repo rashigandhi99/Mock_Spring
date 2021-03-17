@@ -1,4 +1,4 @@
-package com.cg.apps.task1.items.dao;
+/*package com.cg.apps.task1.items.dao;
 
 import com.cg.apps.task1.items.entities.*;
 import javax.persistence.EntityManager;
@@ -39,4 +39,4 @@ public class IItemDAOImpl implements IItemDAO {
 		return item;
 	}
 
-}
+}*/
